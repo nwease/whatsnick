@@ -1,9 +1,10 @@
 import Head from 'next/head'
+import styled from 'styled-components';
 import SideBar from '../components/SideBar';
 
 export default function Home() {
     return (
-        <div>
+        <Container>
             <Head>
                 <title>
                     WhatsNick
@@ -13,6 +14,8 @@ export default function Home() {
             </Head>
 
             <SideBar />
-        </div>
+        </Container>
     )
 }
+
+const Container = styled.div``

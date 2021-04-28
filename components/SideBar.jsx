@@ -14,6 +14,10 @@ function SideBar() {
         const input = prompt('Please enter an email address');
 
         if (!input) return null;
+
+        if (EmailValidator.validate(input)) {
+            // ADD CHAT TO DB HERE
+        }
     }
 
     return (
@@ -35,21 +39,36 @@ function SideBar() {
             <Search>
                 <SearchIcon/>
 
-                <SearchInput placeholder='Search Chats'/>
+                <SearchInput placeholder='SEARCH'/>
             </Search>
 
             <SideBarButton onClick={createChat}>
                 Start a New Chat
             </SideBarButton>
 
-        {/*LIST OF CHATS*/}
+            {/*LIST OF CHATS*/}
         </Container>
     );
 }
 
 export default SideBar;
 
-const Container = styled.div`
+const Container = styled.div``
+
+const Header = styled.div`
+  display: flex;
+  position: sticky;
+  top: 0;
+  background-color: whitesmoke;
+  z-index: 1;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  height: 80px;
+  border-bottom: 1px solid lightgray;
+`
+
+const UserAvatar = styled(Avatar)`
   cursor: pointer;
 
   :hover {
@@ -57,26 +76,7 @@ const Container = styled.div`
   }
 `
 
-const Header = styled.div`
-  display: flex;
-  poition: sticky;
-  top: 0;
-  background-color: #fff;
-  z-index: 1;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px;
-  height: 80px;
-  border-bottom: 1px solid whitesmoke;
-`
-
-const UserAvatar = styled(Avatar)`
-
-`
-
-const IconsContainer = styled.div`
-
-`
+const IconsContainer = styled.div``
 
 const Search = styled.div`
   display: flex;
@@ -89,13 +89,15 @@ const SearchInput = styled.input`
   outline-width: 0;
   border: none;
   flex: 1;
+  background: whitesmoke;
 `
 
-const SideBarButton = styled(Button) `
+const SideBarButton = styled(Button)`
   width: 100%;
-  
+
   &&& {
-    border-top: 1px solid whitesmoke;
-    border-bottom: 1px solid whitesmoke;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    color: lightseagreen;
   }
 `
