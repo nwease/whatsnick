@@ -7,6 +7,7 @@ import {IconButton} from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 import Button from '@material-ui/core/Button';
 import * as EmailValidator from 'email-validator';
+import {auth} from '../firebase';
 
 function SideBar() {
 
@@ -23,7 +24,7 @@ function SideBar() {
     return (
         <Container>
             <Header>
-                <UserAvatar/>
+                <UserAvatar onClick={() => auth.signOut()} />
 
                 <IconsContainer>
                     <IconButton>
@@ -42,7 +43,7 @@ function SideBar() {
                 <SearchInput placeholder='SEARCH'/>
             </Search>
 
-            <SideBarButton onClick={createChat}>
+            <SideBarButton color='primary' onClick={createChat}>
                 Start a New Chat
             </SideBarButton>
 
@@ -59,7 +60,6 @@ const Header = styled.div`
   display: flex;
   position: sticky;
   top: 0;
-  background-color: whitesmoke;
   z-index: 1;
   justify-content: space-between;
   align-items: center;
@@ -98,6 +98,5 @@ const SideBarButton = styled(Button)`
   &&& {
     border-top: 1px solid lightgray;
     border-bottom: 1px solid lightgray;
-    color: lightseagreen;
   }
 `

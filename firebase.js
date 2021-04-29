@@ -1,12 +1,13 @@
 import firebase from 'firebase';
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAgXhiw-1a5b6FH5BM-PYd8g6gwQhtMX9w",
-    authDomain: "whatsnick-a9818.firebaseapp.com",
-    projectId: "whatsnick-a9818",
-    storageBucket: "whatsnick-a9818.appspot.com",
-    messagingSenderId: "576598201755",
-    appId: "1:576598201755:web:511d5bc9870c0d37d27d3e"
+    apiKey: "AIzaSyBuNWSleX4lEgl_iE8RvhkILPKZQ_WWCos",
+    authDomain: "whatsnick-3afee.firebaseapp.com",
+    projectId: "whatsnick-3afee",
+    storageBucket: "whatsnick-3afee.appspot.com",
+    messagingSenderId: "817197024371",
+    appId: "1:817197024371:web:3b536323e71af41d4dd606",
+    measurementId: "G-G5QRBFRE8L"
 };
 
 const app = !firebase.apps.length
