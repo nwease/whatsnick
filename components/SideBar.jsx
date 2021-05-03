@@ -45,7 +45,10 @@ function SideBar() {
     return (
         <Container>
             <Header>
-                <UserAvatar onClick={() => auth.signOut()} />
+                <UserAvatar
+                    src={user.photoURL}
+                    onClick={() => auth.signOut()}
+                />
 
                 <IconsContainer>
                     <IconButton>
@@ -123,6 +126,10 @@ const SearchInput = styled.input`
 
 const SideBarButton = styled(Button)`
   width: 100%;
+
+  :hover {
+    background-color: #e9eaeb;
+  }
 
   &&& {
     border-top: 1px solid lightgray;
